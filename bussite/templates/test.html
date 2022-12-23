@@ -1,0 +1,52 @@
+<style>
+  .form-group {
+    position: relative;
+  }
+
+  .form-control {
+    padding: 1rem 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .form-control.focused {
+    border-color: #66afe9;
+  }
+
+  label {
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    pointer-events: none;
+    color: #999;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+  }
+
+  .form-control:focus + label,
+  .form-control:not(:placeholder-shown) + label {
+    top: -1.5rem;
+    font-size: 0.75rem;
+    color: #66afe9;
+  }
+</style>
+
+<form>
+  <div class="form-group">
+    <input type="text" class="form-control" id="name" placeholder="Name">
+    <label for="name">Name</label>
+  </div>
+</form>
+
+<script>
+  // Add a class to the text field when it's focused
+  var textField = document.getElementById("name");
+  textField.addEventListener("focus", function() {
+    textField.classList.add("focused");
+  });
+
+  // Remove the class when the text field is blurred
+  textField.addEventListener("blur", function() {
+    textField.classList.remove("focused");
+  });
+</script>

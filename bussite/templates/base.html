@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}Bus Stop Search{% endblock %}</title>
+  <!-- Link to a style sheet and jQuery -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <script src="{% static 'js/jquery.js' %}"></script>
+  <!-- Link to the jQuery UI Autocomplete widget -->
+  <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+  <script src="{% static 'js/jquery-ui.js' %}"></script>
+</head>
+<body>
+  {% block content %}
+  {% endblock %}
+</body>
+</html>

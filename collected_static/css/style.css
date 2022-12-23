@@ -1,0 +1,14 @@
+#stop {
+    display: none;
+}
+.bus_icon {
+  background: var(--bs-red);
+}
+
+#routes {
+    display: none;
+}
+
+#bus_arrivals {
+    display: none;
+}

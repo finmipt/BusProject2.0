@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <form id="search-form">
+    <label for="region">Region:</label>
+    <input type="text" id="region" name="region" autocomplete="off">
+<button type="submit">Search</button>
+
+  </form>
+  <div id="search-results">
+    <label for="stop">Stop:</label>
+    <input type="text" id="stop" name="stop" autocomplete="off">
+    <form id="buses-form">
+      <button type="submit">Get Buses</button>
+    </form>
+    <div id="buses-results">
+    </div>
+  </div>
+  <script src="{% static 'js/app.js' %}"></script>
+{% endblock %}

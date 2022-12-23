@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bus Stop Search</title>
+  <!-- Link to a style sheet and jQuery -->
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script src="/static/js/jquery.js"></script>
+  <!-- Link to the jQuery UI Autocomplete widget -->
+  <link rel="stylesheet" href="/static/css/jquery-ui.css">
+  <script src="/static/js/jquery-ui.js"></script>
+</head>
+<body>
+  <!-- Form for searching for stops by region -->
+  <form id="search-form">
+    <!-- Text field for searching by region -->
+    <label for="region">Region:</label>
+    <input type="text" id="region" name="region" autocomplete="off">
+    <!-- Button for submitting the form -->
+    <button type="submit">Search</button>
+  </form>
+
+  <!-- Drop-down menu for displaying the search results -->
+<div id="search-results">
+  <label for="stop">Stop:</label>
+  <input type="text" id="stop" name="stop" autocomplete="off">
+</div>
+
+<!-- Script for initializing the Autocomplete widget -->
+<script>
+  // Set up the Autocomplete widget on the stop field
+  $("#stop").autocomplete({
+    // Set the source of the suggestions to a function that makes an AJAX request
+    // to the server for the list of stops
+    source: function(request, response) {
+      $.get("/search_stops_by_region/", {
+        region: $("#region").val()
+      }, function(data) {
+        response(data);
+      });
+    }
+  });
+</script>
+  <!-- Form for searching for buses by stop -->
+  <form id="buses-form">
+    <!-- Button for submitting the form -->
+    <button type="submit">Get Buses</button>
+  </form>
+  <!-- Div for displaying the bus search results -->
+  <div id="buses-results">
+  </div>
+  <!-- Scripts for handling the form submissions and making AJAX requests -->
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
