@@ -5,6 +5,7 @@ A web application that allows users to search for information about bus stops an
 
 - Search for bus stops and routes by region or by stop name
 - View a list of buses that stop at a particular stop
+- View a list of bus arrivals
 
 ## Technologies
 
