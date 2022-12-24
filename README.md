@@ -1,5 +1,5 @@
 # BusProject2.0
-http://finmipt.pythonanywhere.com/
+http://finmipt.pythonanywhere.com/ <br>
 A web application that allows users to search for information about bus stops and routes in Estonia.
 
 ## Features
